@@ -7,6 +7,8 @@ from Traversal.breadthFirst import *
 
 from Traversal.depthFirst import *
 
+from TopologicalSort.topologicalSort import *
+
 # g = AdjacencyMatrixGraph(4, directed=True)
 
 # g.add_edge(0,1)
@@ -34,7 +36,7 @@ from Traversal.depthFirst import *
 #     print("Indegree: ", i, g.get_indegree(i))
 
 # g.display()
-g = AdjacencyMatrixGraph(9)
+g = AdjacencyMatrixGraph(9, directed = True)
 
 g.add_edge(0, 1)
 g.add_edge(1, 2)
@@ -48,5 +50,7 @@ g.add_edge(3, 4)
 g.add_edge(6, 8)
 
 # breadth_first(g,2)
-visited = np.zeros(g.numVertices)
-depth_first(g, visited)
+# visited = np.zeros(g.numVertices)
+# depth_first(g, visited)
+
+topologicalSort(g)
