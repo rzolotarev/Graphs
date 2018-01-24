@@ -9,6 +9,8 @@ from Traversal.depthFirst import *
 
 from TopologicalSort.topologicalSort import *
 
+from UnweightShortestPath.shortestPath import *
+
 # g = AdjacencyMatrixGraph(4, directed=True)
 
 # g.add_edge(0,1)
@@ -36,7 +38,7 @@ from TopologicalSort.topologicalSort import *
 #     print("Indegree: ", i, g.get_indegree(i))
 
 # g.display()
-g = AdjacencyMatrixGraph(9, directed = True)
+g = AdjacencyMatrixGraph(9, directed = False)
 
 g.add_edge(0, 1)
 g.add_edge(1, 2)
@@ -53,4 +55,8 @@ g.add_edge(6, 8)
 # visited = np.zeros(g.numVertices)
 # depth_first(g, visited)
 
-topologicalSort(g)
+# topologicalSort(g)
+
+shortest_path(g, 0, 5)
+shortest_path(g, 0, 6)
+shortest_path(g, 7, 4)
