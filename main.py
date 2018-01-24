@@ -9,7 +9,9 @@ from Traversal.depthFirst import *
 
 from TopologicalSort.topologicalSort import *
 
-from UnweightShortestPath.shortestPath import *
+# from UnweightShortestPath.shortestPath import *
+
+from DijkstraAlgorithm.shortestPath import *
 
 # g = AdjacencyMatrixGraph(4, directed=True)
 
@@ -38,7 +40,7 @@ from UnweightShortestPath.shortestPath import *
 #     print("Indegree: ", i, g.get_indegree(i))
 
 # g.display()
-g = AdjacencyMatrixGraph(9, directed = False)
+g = AdjacencyMatrixGraph(9, directed = True)
 
 g.add_edge(0, 1)
 g.add_edge(1, 2)
