@@ -43,7 +43,8 @@ class priority_dict(dict):
         """
         
         heap = self._heap
-        v, k = heappop(heap)
+        v,k = heappop(heap)
+     
         while k not in self or self[k] != v:
             v, k = heappop(heap)
         del self[k]
