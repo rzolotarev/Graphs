@@ -1,4 +1,4 @@
-from DijkstraAlgorithm.priority_dict2 import *
+from DijkstraAlgorithm.priorityDict import *
 
 from Graph.abstract import *
 
@@ -11,13 +11,13 @@ def build_distance_table(graph, source):
     
     distance_table[source] = (0, source)
 
-    priority_queue = PriorityQueue()
+    priority_queue = priority_dict()
 
-    priority_queue.append(source,0)        
+    priority_queue[source] = 0
     
     while len(priority_queue.keys()) > 0:
 
-        current_vertex = priority_queue.pop()        
+        current_vertex = priority_queue.pop_smallest()        
 
         current_distance = distance_table[current_vertex][0]
 
@@ -29,7 +29,7 @@ def build_distance_table(graph, source):
 
             if neighbor_distance is None or neighbor_distance > distance:
                 distance_table[neighbor] = (distance, current_vertex)                
-                priority_queue.append(neighbor, distance)
+                priority_queue[neighbor] = distance
     
     return distance_table
 
